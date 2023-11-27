@@ -1,0 +1,78 @@
+<html>
+<head>
+</head>
+<body>
+
+<form name="f1">
+       <!-- First Name:<input type="text" name=fname><br><br>
+
+
+       Last Name: <input type="text" name=lname><br><br>
+    
+
+       Age: <input type="text" name=age><br><br>
+        -->
+
+       Email: <input type="text" name="email"><br><br>
+
+       <button text="submit" onclick="validate()">Submit</button>
+
+</form>
+
+<script>
+     function validate()
+     {
+        // let fname=f1.fname.value;
+        // let lname=f1.lname.value;
+        // let age=f1.age.value;
+        let email=f1.email.value;
+
+        //alert("Firstname:"+fname+"LastName:"+lname+"Age"+age);
+
+        // if(fname=="" || lname=="" || age=="")
+        // {
+        //     alert("Invalid")
+        // }
+
+
+       
+        // if(age>=18 && age<=50)
+        // {
+
+        //     alert("Valid age");
+        // }
+
+        // else{
+        //     alert("Age should be greater than 18 and less than 50")
+        // }
+
+
+        
+        // var pattern=/^[a-z]+$/i;
+
+        // if(pattern.test(fname) && pattern.test(lname) && age>=18 && age<=50)
+        // {
+        //     alert("Valid name and age");
+        // }
+
+        // else {
+        //     alert("Invalid name and age");
+        // }
+
+       
+        var pattern1=/^[a-z]+[a-z 0-9 - _ .]*@[a-z]*((\.[a-z]{3})|(\.[a-z]{2}\.[a-z]{2}))$/i;
+
+        if(pattern1.test(email))
+        {
+            alert("valid email")
+        }
+
+        else{
+            alert("Invalid email");
+        }
+
+
+     }
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<title>Home</title>
+	</head>
+
+	
+<body>
+	<form>
+	<center>
+		First Name:<input type="text" id="fn"><br>
+		Last Name:<input type="text" id="ln"><br>
+		Age:<input type="text" id="age"><br>
+		Email:<input type="email" id="mail"><br>
+		Date: <input type="text" id="dat"><br>
+		<input type="submit" value="click Me" onclick="click1()">
+	</center>
+	</form>
+	
+	<script>
+                  
+		function click1()
+		{
+			
+			var fname = document.getElementById("fn").value;
+			var lname = document.getElementById("ln").value;
+			var age = document.getElementById("age").value;
+			var email = document.getElementById("mail").value;
+			var date = document.getElementById("dat").value;
+
+			/*if(fname==""||lname==""||age=="")
+			{
+				alert("All fields are mandatory !!");
+			}
+
+			if(!(age > 18 && age < 50))
+			{
+				alert("Age must be in between 18 and 50 !!");
+			}
+
+			var patternN = /[a-z]/i;
+			if(!(fname.match(patternN) && lname.match(patternN)))
+			{
+				alert("Name must be alphabetical !!");
+			}*/
+
+			/*var patternm = /^[a-z]+[a-z0-9-_.]*@[a-z]*((\.[a-z]{3})|(\.[a-z]{2}\.[a-z]{2}))$/i;
+			if(!(email.match(patternm)))
+			{
+				alert("Email id not valid !!");
+			}*/
+
+			var patterndate = /^[0-9]{2}-[0-9]{2}-[0-9]{4}$/;
+
+			if(date.match(patterndate))
+			{
+				var splitdate = date.split('-');
+				
+				if(splitdate[0] <= 31)
+				{
+					if(splitdate[1] <= 12)
+					{
+						if(splitdate[1] == 2)
+						{
+
+							if(splitdate[2]%4 == 0)
+							{
+								if(!(splitdate[0] <= 29))
+								{
+									alert("Invalid date for February month because its a leap year !!");
+								}
+							}
+							else
+							{
+								if(!(splitdate[0] <= 28))
+								{
+									alert("Invalid date for February month !!");
+								}
+							}
+						}
+
+						if(splitdate[1] == 4 || splitdate[1] == 6 || splitdate[1] == 9 || splitdate[1] == 11)
+						{
+							if(!(splitdate[0] <= 30))
+							{
+								alert("Invalid date for this month !!");
+							}
+						}
+					}
+					else
+					{
+						alert("Month should be less than 12");
+					}
+				}
+				else
+				{
+					alert("Date should be less than 31");
+				}
+			}
+			else
+			{
+				alert("Date is not valid !!");
+			}
+			
+
+
+
+			
+			
+		}
+	</script>
+	
+</body>
+</html>
